@@ -7,13 +7,16 @@ const weatherText = document.querySelector('.weather-text')
 const humidity = document.querySelector('.abt-humidity')
 const windSpeed = document.querySelector('.abt-wind-speed')
 const invalidLocation = document.querySelector('.location-name')
+const loading = document.getElementById('loading');
 
 searchBtn.addEventListener('click', () => {
+
+    loading.style.display = 'block';
 
     const apiKey = 'bae3d825ee91b672bb84c1dfb4bc0e09'
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${search.value}&appid=${apiKey}`
 
-    console.log(url);
+
 
     fetch(url)
         .then(response => response.json())
@@ -26,6 +29,8 @@ searchBtn.addEventListener('click', () => {
                 humidity.textContent = ''
                 windSpeed.textContent = ''
                 weatherText.textContent = ''
+                loading.style.display = 'none';
+
                 return
             } else {
                 let weatherName = data.weather[0].main
@@ -36,8 +41,8 @@ searchBtn.addEventListener('click', () => {
                 humidity.textContent = `${data.main.humidity}%`
                 windSpeed.textContent = `${parseInt(data.wind.speed * 3.6)}km/h`
                 weatherText.textContent = weatherName
-
-                console.log(data);
+                search.value = ''
+                loading.style.display = 'none';
 
                 switch (weatherName) {
                     case 'Clouds':
@@ -58,7 +63,10 @@ searchBtn.addEventListener('click', () => {
                 }
                 return
             }
-
+        })
+        .catch(e => {
+            console.log('API Error:', e);
+            loading.style.display = 'block';
         })
 })
 
