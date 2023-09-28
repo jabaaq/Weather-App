@@ -93,6 +93,26 @@ body {
     height: 290px;
 }
 
+.content-part {
+    transform-style: preserve-3d;
+    transform: rotateX(-10deg);
+    transition: all 0.3s ease-in-out;
+    animation: form-animation 0.5s ease-in-out;
+}
+
+@keyframes form-animation {
+    from {
+        transform: rotateX(-30deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+
 .humidity svg {
     width: 20px;
     height: 20px;

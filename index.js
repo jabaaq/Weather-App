@@ -8,15 +8,14 @@ const humidity = document.querySelector('.abt-humidity')
 const windSpeed = document.querySelector('.abt-wind-speed')
 const invalidLocation = document.querySelector('.location-name')
 const loading = document.getElementById('loading');
+const mainContent = document.querySelector('.main-container')
 
-searchBtn.addEventListener('click', () => {
 
+function getWeather() {
     loading.style.display = 'block';
 
     const apiKey = 'bae3d825ee91b672bb84c1dfb4bc0e09'
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${search.value}&appid=${apiKey}`
-
-
 
     fetch(url)
         .then(response => response.json())
@@ -60,6 +59,8 @@ searchBtn.addEventListener('click', () => {
                     case 'Clear':
                         weatherImg.src = 'img/clear.png'
                         break
+                    default:
+                        weatherImg.src = 'img/letsSearch.png'
                 }
                 return
             }
@@ -68,7 +69,13 @@ searchBtn.addEventListener('click', () => {
             console.log('API Error:', e);
             loading.style.display = 'block';
         })
-})
+}
+searchBtn.addEventListener('click', getWeather)
 
+document.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        getWeather()
+    }
+})
 
 
