@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+body {
+    background-color: #6C5FAB;
+    background: radial-gradient(103.89% 121.8% at 34.94% 108.33%, #F7CBFD 0%, #7758D1 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.search-part {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 20px;
+    /* margin-top: 20px; */
+}
+
+#search-bar {
+    width: 325px;
+    height: 100%;
+    padding: 20px 20px;
+    font-size: 20px;
+    border-radius: 50px;
+}
+
+.search-part svg {
+    fill: black;
+}
+
+.searchBtn {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(95, 95, 163);
+    border-radius: 50%;
+}
+
+.searchBtn svg {
+    padding: 3px;
+}
+
+.location-svg {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+}
+
+
+.content-part {
+    position: relative;
+    height: 250px;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.location {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.location .location-img {
+    width: 290px;
+    height: 290px;
+}
+
+.humidity svg {
+    width: 20px;
+    height: 20px;
+}
+
+.wind-speed svg {
+    width: 20px;
+    height: 20px;
+}
+
+.main-container {
+    border-radius: 50px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: -40px 60px 150px 0px rgba(59, 38, 123, 0.70);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    height: 600px;
+    gap: 60px;
+}
+
+.weather-details {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+.humidity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wind-speed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather-details svg {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.loc-temp {
+    font-weight: bolder;
+    font-size: 70px;
+}
+
+.loc-weather {
+    font-size: 25px;
+}
